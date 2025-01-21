@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Dashboard</h1>
+    <form id="postForm">
+        <input type="file" id="image" name="image"><br><br>
+        <label for="caption">Caption:</label><br>
+        <textarea id="caption" name="caption"></textarea><br><br>
+        <button type="button" onclick="createPost()">Post</button>
+    </form>
+    <div id="posts"></div>
+
+    <script>
+        async function createPost() {
+            const formData = new FormData();
+            formData.append('image', document.getElementById('image').files[0]);
+            formData.append('caption', document.getElementById('caption').value);
+
+        }
